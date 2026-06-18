@@ -1,24 +1,11 @@
+import 'react-native-gesture-handler'; // Obrigatório no topo para o Drawer funcionar
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
-import Home from './src/pages/Home';
-import Contato from './src/pages/Contato';
-import Sobre from './src/pages/Sobre';
-
+import { NavigationContainer } from '@react-navigation/native';
+import { DrawerRoutes } from './src/routes/DrawerRoutes';
 export default function App() {
   return (
-    <ScrollView>
-      {/* <Home /> */}
-      {/* <Contato /> */}
-      <Sobre />
-    </ScrollView>
+    <NavigationContainer>
+      <DrawerRoutes />
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
