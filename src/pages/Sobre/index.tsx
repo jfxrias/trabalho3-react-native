@@ -1,11 +1,24 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
+import { StackNavigationProp } from '@react-navigation/stack';
 
-export default function Sobre({ navigation }) {
+
+type RootStackParamList = {
+  Home: undefined;
+  Contato: undefined;
+  Sobre: undefined;
+};
+
+type SobreScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Sobre'>;
+
+type Props = {
+  navigation: SobreScreenNavigationProp;
+};
+
+export default function Sobre({ navigation }: Props) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Tela Sobre</Text>
-
 
       <Text style={styles.text}>
         Este aplicativo foi desenvolvido para coletar informações básicas de contato,
@@ -29,4 +42,3 @@ const styles = StyleSheet.create({
   },
   buttonText: { color: '#fff', fontSize: 16, fontWeight: '600' }
 });
-
